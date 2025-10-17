@@ -21,6 +21,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Billing", "Billing", "{EFE5
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1-Vertical Slice", "1-Vertical Slice", "{912EC2B3-F995-420F-9C7E-5207B9738D8D}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2-Presentation Layer", "2-Presentation Layer", "{D152E56D-D296-4CB6-8FDE-0B43AAD65C3D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
