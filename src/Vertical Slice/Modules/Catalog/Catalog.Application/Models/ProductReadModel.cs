@@ -1,4 +1,4 @@
-namespace Catalog.Application.Models;
+namespace VerticalSlice.Catalog.Application.Models;
 
 public class ProductReadModel
 {

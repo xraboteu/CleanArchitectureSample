@@ -1,7 +1,7 @@
 using MediatR;
-using Billing.Application.Models;
+using VerticalSlice.Billing.Application.Models;
 
-namespace Billing.Application.Features.GetInvoice;
+namespace VerticalSlice.Billing.Application.Features.GetInvoice;
 
 // Query
 public record GetInvoiceQuery(Guid Id) : IRequest<InvoiceReadModel?>;

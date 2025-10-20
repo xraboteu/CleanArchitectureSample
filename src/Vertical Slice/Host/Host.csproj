@@ -3,7 +3,8 @@
     <TargetFramework>net9.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <AssemblyName>$(MSBuildProjectName)PresentationLayer</AssemblyName>
+    <AssemblyName>$(MSBuildProjectName)</AssemblyName>
+    <RootNamespace>VerticalSlice.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\Modules\Billing\Billing.Application\Billing.Application.csproj" />

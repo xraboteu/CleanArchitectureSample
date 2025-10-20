@@ -1,4 +1,4 @@
-namespace Catalog.Domain;
+namespace VerticalSlice.Catalog.Domain;
 
 public class Product
 {

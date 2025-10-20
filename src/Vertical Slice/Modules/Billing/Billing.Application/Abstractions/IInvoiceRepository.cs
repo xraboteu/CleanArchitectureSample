@@ -1,7 +1,7 @@
-using Billing.Application.Models;
-using Billing.Domain;
+using VerticalSlice.Billing.Application.Models;
+using VerticalSlice.Billing.Domain;
 
-namespace Billing.Application.Abstractions;
+namespace VerticalSlice.Billing.Application.Abstractions;
 
 public interface IInvoiceRepository
 {

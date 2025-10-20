@@ -1,8 +1,8 @@
 using MediatR;
-using Catalog.Application.Models;
-using Catalog.Application.Abstractions;
+using VerticalSlice.Catalog.Application.Abstractions;
+using VerticalSlice.Catalog.Application.Models;
 
-namespace Catalog.Application.Features.GetProduct;
+namespace VerticalSlice.Catalog.Application.Features.GetProduct;
 
 public class GetProductHandler : IRequestHandler<GetProductQuery, ProductReadModel?>
 {

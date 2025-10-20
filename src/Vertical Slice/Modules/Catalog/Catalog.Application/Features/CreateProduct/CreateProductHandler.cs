@@ -1,8 +1,8 @@
 using MediatR;
-using Catalog.Domain;
-using Catalog.Application.Abstractions;
+using VerticalSlice.Catalog.Application.Abstractions;
+using VerticalSlice.Catalog.Domain;
 
-namespace Catalog.Application.Features.CreateProduct;
+namespace VerticalSlice.Catalog.Application.Features.CreateProduct;
 
 public class CreateProductHandler : IRequestHandler<CreateProductCommand, Guid>
 {

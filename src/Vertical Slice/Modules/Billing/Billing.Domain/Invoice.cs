@@ -1,4 +1,4 @@
-namespace Billing.Domain;
+namespace VerticalSlice.Billing.Domain;
 
 public class Invoice
 {

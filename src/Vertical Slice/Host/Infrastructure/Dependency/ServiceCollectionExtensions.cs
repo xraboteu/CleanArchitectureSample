@@ -1,11 +1,11 @@
-using Billing.Application.Abstractions;
-using Catalog.Application.Abstractions;
-using Host.Infrastructure.Repository;
 using System.Reflection;
-using Billing.Application.Features.CreateInvoice;
-using Catalog.Application.Features.CreateProduct;
+using VerticalSlice.Billing.Application.Abstractions;
+using VerticalSlice.Billing.Application.Features.CreateInvoice;
+using VerticalSlice.Catalog.Application.Abstractions;
+using VerticalSlice.Catalog.Application.Features.CreateProduct;
+using VerticalSlice.Host.Infrastructure.Repository;
 
-namespace Host.Infrastructure.Dependency;
+namespace VerticalSlice.Host.Infrastructure.Dependency;
 
 public static class ServiceCollectionExtensions
 {

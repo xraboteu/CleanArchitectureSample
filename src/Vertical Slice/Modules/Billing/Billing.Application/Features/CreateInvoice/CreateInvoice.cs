@@ -1,6 +1,6 @@
 using MediatR;
 
-namespace Billing.Application.Features.CreateInvoice;
+namespace VerticalSlice.Billing.Application.Features.CreateInvoice;
 
 // Command
 public record CreateInvoiceCommand(Guid CustomerId, decimal Amount) : IRequest<Guid>;

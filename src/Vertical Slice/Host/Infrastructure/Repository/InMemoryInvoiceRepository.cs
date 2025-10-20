@@ -1,6 +1,6 @@
-using Billing.Application.Abstractions;
+using VerticalSlice.Billing.Application.Abstractions;
 
-namespace Host.Infrastructure.Repository;
+namespace VerticalSlice.Host.Infrastructure.Repository;
 
 public class InMemoryInvoiceRepository : IInvoiceRepository
 {

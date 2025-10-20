@@ -1,10 +1,10 @@
-using Billing.Application.Features.CreateInvoice;
-using Billing.Application.Features.GetInvoice;
-using Catalog.Application.Features.CreateProduct;
-using Catalog.Application.Features.GetProduct;
 using MediatR;
+using VerticalSlice.Billing.Application.Features.CreateInvoice;
+using VerticalSlice.Billing.Application.Features.GetInvoice;
+using VerticalSlice.Catalog.Application.Features.CreateProduct;
+using VerticalSlice.Catalog.Application.Features.GetProduct;
 
-namespace Host.Infrastructure.Routing;
+namespace VerticalSlice.Host.Infrastructure.Routing;
 
 public static class Endpoints
 {

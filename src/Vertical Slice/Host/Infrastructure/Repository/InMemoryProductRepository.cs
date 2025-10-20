@@ -1,6 +1,6 @@
-using Catalog.Application.Abstractions;
+using VerticalSlice.Catalog.Application.Abstractions;
 
-namespace Host.Infrastructure.Repository;
+namespace VerticalSlice.Host.Infrastructure.Repository;
 
 public class InMemoryProductRepository : IProductRepository
 {

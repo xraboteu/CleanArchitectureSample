@@ -1,7 +1,7 @@
-using Catalog.Application.Models;
-using Catalog.Domain;
+using VerticalSlice.Catalog.Application.Models;
+using VerticalSlice.Catalog.Domain;
 
-namespace Catalog.Application.Abstractions;
+namespace VerticalSlice.Catalog.Application.Abstractions;
 
 public interface IProductRepository
 {

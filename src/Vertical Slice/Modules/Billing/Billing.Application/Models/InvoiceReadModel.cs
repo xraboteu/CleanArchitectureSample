@@ -1,4 +1,4 @@
-namespace Billing.Application.Models;
+namespace VerticalSlice.Billing.Application.Models;
 
 public class InvoiceReadModel
 {

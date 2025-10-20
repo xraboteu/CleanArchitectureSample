@@ -1,8 +1,8 @@
 using MediatR;
-using Billing.Application.Models;
-using Billing.Application.Abstractions;
+using VerticalSlice.Billing.Application.Abstractions;
+using VerticalSlice.Billing.Application.Models;
 
-namespace Billing.Application.Features.GetInvoice;
+namespace VerticalSlice.Billing.Application.Features.GetInvoice;
 
 public class GetInvoiceHandler : IRequestHandler<GetInvoiceQuery, InvoiceReadModel?>
 {

@@ -1,7 +1,7 @@
 ﻿using MediatR;
 using Microsoft.Extensions.Logging;
 
-namespace Billing.Application.Features.Notifications;
+namespace VerticalSlice.Billing.Application.Features.Notifications;
 
 public sealed class SendInvoiceEmailHandler : INotificationHandler<InvoiceCreated>
 {

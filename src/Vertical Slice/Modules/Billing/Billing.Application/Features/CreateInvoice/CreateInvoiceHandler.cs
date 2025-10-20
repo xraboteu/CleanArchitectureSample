@@ -1,9 +1,9 @@
-using Billing.Application.Abstractions;
-using Billing.Application.Features.Notifications;
-using Billing.Domain;
 using MediatR;
+using VerticalSlice.Billing.Application.Abstractions;
+using VerticalSlice.Billing.Application.Features.Notifications;
+using VerticalSlice.Billing.Domain;
 
-namespace Billing.Application.Features.CreateInvoice;
+namespace VerticalSlice.Billing.Application.Features.CreateInvoice;
 
 public class CreateInvoiceHandler : IRequestHandler<CreateInvoiceCommand, Guid>
 {

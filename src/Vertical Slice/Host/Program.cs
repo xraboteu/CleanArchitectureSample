@@ -1,6 +1,6 @@
-using Host.Infrastructure.Dependency;
-using Host.Infrastructure.Routing;
 using Microsoft.OpenApi.Models;
+using VerticalSlice.Host.Infrastructure.Dependency;
+using VerticalSlice.Host.Infrastructure.Routing;
 
 var builder = WebApplication.CreateBuilder(args);
 
