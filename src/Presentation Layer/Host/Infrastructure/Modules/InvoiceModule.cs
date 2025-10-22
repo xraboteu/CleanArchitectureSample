@@ -1,4 +1,5 @@
 ﻿using Carter;
+using Carter.OpenApi;
 using FluentValidation;
 using MediatR;
 using Microsoft.AspNetCore.Http.HttpResults;
@@ -7,15 +8,16 @@ using PresentationLayer.Billing.Application.Features.CreateInvoice;
 using PresentationLayer.Billing.Application.Features.GetInvoice;
 using PresentationLayer.Billing.Application.Models;
 
-namespace PresentationLayer.Host.Modules
+namespace PresentationLayer.Host.Infrastructure.Modules
 {
-    public class InvoiceModule : CarterModule
+    public class InvoiceModule : ICarterModule
     {
-        public override void AddRoutes(IEndpointRouteBuilder app)
+        public void AddRoutes(IEndpointRouteBuilder app)
         {
             // Regroupe les endpoints de la feature avec un prefix clair et tags pour OpenAPI
             var group = app.MapGroup("/api/v1/invoices")
-                .WithTags("Invoices");
+                    .WithTags("Invoices")
+                    .IncludeInOpenApi();
 
             // GET /api/v1/invoices/{id}
             group.MapGet("/{id:int}", async Task<Results<Ok<InvoiceReadModel>, ProblemHttpResult>>
@@ -30,18 +32,19 @@ namespace PresentationLayer.Host.Modules
                             statusCode: StatusCodes.Status404NotFound);
                 })
                 .Produces<InvoiceReadModel>(StatusCodes.Status200OK)
-                .ProducesProblem(StatusCodes.Status404NotFound);
+                .ProducesProblem(StatusCodes.Status404NotFound)
+                .IncludeInOpenApi();
 
             // POST /api/v1/invoices
             group.MapPost("/", async Task<Results<Created<Guid>, ValidationProblem>>
-                    ([FromQuery] Guid customerId, decimal amount, ISender sender, CancellationToken ct) =>
+                    (InvoiceDto invoiceDto, ISender sender, CancellationToken ct) =>
                 {
-                    var id = await sender.Send(new CreateInvoiceCommand(customerId, amount), ct);
+                    var id = await sender.Send(new CreateInvoiceCommand(invoiceDto.InvoiceId, invoiceDto.Amount), ct);
                     return TypedResults.Created($"/api/v1/invoices/{id}", id);
                 })
-                .AddEndpointFilter<FluentValidationFilter<CreateInvoiceCommand>>()
                 .Produces<Guid>(StatusCodes.Status201Created)
-                .ProducesValidationProblem();
+                .ProducesValidationProblem()
+                .IncludeInOpenApi();
         }
     }
 }

@@ -10,9 +10,9 @@ builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new OpenApiInfo
     {
-        Title = "Clean Architecture demo API",
+        Title = "Clean Architecture demo API Vertical Slice",
         Version = "v1",
-        Description = "Clean Architecture demo"
+        Description = "Clean Architecture demo Vertical Slice"
     });
 });
 

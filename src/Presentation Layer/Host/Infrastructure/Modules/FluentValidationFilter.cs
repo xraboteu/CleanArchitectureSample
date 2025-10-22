@@ -1,6 +1,6 @@
 ﻿using FluentValidation;
 
-namespace PresentationLayer.Host.Modules
+namespace PresentationLayer.Host.Infrastructure.Modules
 {
     public sealed class FluentValidationFilter<T> : IEndpointFilter
     {
@@ -10,11 +10,15 @@ namespace PresentationLayer.Host.Modules
 
         public async ValueTask<object> InvokeAsync(EndpointFilterInvocationContext ctx, EndpointFilterDelegate next)
         {
-            var model = ctx.Arguments.OfType<T>().FirstOrDefault();
+            var model = ctx.Arguments.FirstOrDefault();
             if (model is null)
                 return Results.ValidationProblem(new Dictionary<string, string[]> { { "", new[] { "Payload manquant." } } });
 
-            var result = await _validator.ValidateAsync(model);
+            if (model is not T typedModel)
+                return Results.ValidationProblem(new Dictionary<string, string[]> { { "", new[] { "Type du payload invalide." } } });
+
+            var validationContext = new FluentValidation.ValidationContext<T>(typedModel);
+            var result = await _validator.ValidateAsync(validationContext);
             if (!result.IsValid) return Results.ValidationProblem(result.ToDictionary());
 
             return await next(ctx);
