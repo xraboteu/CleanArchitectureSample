@@ -1,12 +1,11 @@
 ﻿using Carter;
 using Carter.OpenApi;
-using FluentValidation;
 using MediatR;
 using Microsoft.AspNetCore.Http.HttpResults;
-using Microsoft.AspNetCore.Mvc;
 using PresentationLayer.Billing.Application.Features.CreateInvoice;
 using PresentationLayer.Billing.Application.Features.GetInvoice;
 using PresentationLayer.Billing.Application.Models;
+using PresentationLayer.Host.Infrastructure.Modules.Dtos;
 
 namespace PresentationLayer.Host.Infrastructure.Modules
 {
@@ -20,7 +19,7 @@ namespace PresentationLayer.Host.Infrastructure.Modules
                     .IncludeInOpenApi();
 
             // GET /api/v1/invoices/{id}
-            group.MapGet("/{id:int}", async Task<Results<Ok<InvoiceReadModel>, ProblemHttpResult>>
+            group.MapGet("/{id:guid}", async Task<Results<Ok<InvoiceReadModel>, ProblemHttpResult>>
                     (Guid id, ISender sender, CancellationToken ct) =>
                 {
                     var dto = await sender.Send(new GetInvoiceQuery(id), ct);

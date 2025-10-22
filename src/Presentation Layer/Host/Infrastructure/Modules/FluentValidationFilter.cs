@@ -17,7 +17,7 @@ namespace PresentationLayer.Host.Infrastructure.Modules
             if (model is not T typedModel)
                 return Results.ValidationProblem(new Dictionary<string, string[]> { { "", new[] { "Type du payload invalide." } } });
 
-            var validationContext = new FluentValidation.ValidationContext<T>(typedModel);
+            var validationContext = new ValidationContext<T>(typedModel);
             var result = await _validator.ValidateAsync(validationContext);
             if (!result.IsValid) return Results.ValidationProblem(result.ToDictionary());
 
